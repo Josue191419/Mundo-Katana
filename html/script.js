@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
-
   const infoBtn = document.getElementById("infoBtn");
   const extraInfo = document.getElementById("extraInfo");
   const modeBtn = document.getElementById("modeBtn");
 
-  // Mostrar/ocultar info extra
+  // Mostrar/ocultar información extra
   infoBtn.addEventListener("click", function() {
     if (extraInfo.style.display === "none") {
       extraInfo.style.display = "block";
@@ -15,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  // Modo oscuro
+  // Cambiar entre modo claro y oscuro
   modeBtn.addEventListener("click", function() {
     document.body.classList.toggle("dark-mode");
 
@@ -26,13 +25,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  // Cards que se voltean
-  const cards = document.querySelectorAll(".card");
-
-  cards.forEach(card => {
-    card.addEventListener("click", () => {
-      card.classList.toggle("flipped");
+  // Flip cards al presionar
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
     });
   });
-
 });

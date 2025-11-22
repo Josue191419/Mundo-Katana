@@ -35,22 +35,6 @@ section {
   text-align: center;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
 /* Botones */
 button {
   background-color: #b22222;
@@ -74,7 +58,7 @@ footer {
   padding: 15px;
 }
 
-/* 🌙 Modo oscuro */
+/* Modo oscuro */
 .dark-mode {
   background-color: #1c1c1c;
   color: #eee;
@@ -92,7 +76,7 @@ footer {
   background-color: #222;
 }
 
-/* ============ MENÚ HAMBURGUESA ============ */
+/* Menú hamburguesa */
 #menu-toggle {
   display: none;
 }
@@ -128,15 +112,17 @@ footer {
   }
 }
 
-/* ============ CARDS ============ */
-
+/* Cards */
 .card-container {
   display: flex;
-  gap: 35px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 20px;
+  gap: 45px;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  width: 100%;
 }
+
 
 .card {
   width: 250px;
@@ -170,7 +156,9 @@ footer {
 }
 
 .card .front img {
-  width: 85%;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
   border-radius: 10px;
 }
 
@@ -178,12 +166,37 @@ footer {
   background-color: #333;
   transform: rotateY(180deg);
   font-size: 16px;
+  text-align: center;
 }
 
+/* Flip */
 .card.flipped .front {
   transform: rotateY(180deg);
 }
 
 .card.flipped .back {
   transform: rotateY(360deg);
+}
+
+/* Texto de presionar */
+.press-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 8px;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.press-text:hover {
+  color: #ffcc00;
+  cursor: pointer;
+}
+
+/* Hint */
+.hint-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #b22222;
+  margin-bottom: 15px;
 }
