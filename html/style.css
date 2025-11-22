@@ -92,10 +92,30 @@ footer {
   background-color: #222;
 }
 
-/* 📱 Adaptación a móviles */
+/* ============ MENÚ HAMBURGUESA ============ */
+#menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 35px;
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  width: fit-content;
+}
+
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 22px;
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    padding: 10px;
   }
 
   nav a {
@@ -103,7 +123,67 @@ footer {
     margin: 10px 0;
   }
 
-  .gallery {
-    grid-template-columns: 1fr;
+  #menu-toggle:checked ~ nav {
+    display: flex;
   }
+}
+
+/* ============ CARDS ============ */
+
+.card-container {
+  display: flex;
+  gap: 35px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  width: 250px;
+  height: 320px;
+  margin: 10px;
+  perspective: 1000px;
+  position: relative;
+  cursor: pointer;
+}
+
+.card .front,
+.card .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.8s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+.card .front {
+  background-color: #b22222;
+}
+
+.card .front img {
+  width: 85%;
+  border-radius: 10px;
+}
+
+.card .back {
+  background-color: #333;
+  transform: rotateY(180deg);
+  font-size: 16px;
+}
+
+.card.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .back {
+  transform: rotateY(360deg);
 }
