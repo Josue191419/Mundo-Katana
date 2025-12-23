@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mundo Katana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Katana World</h1>
+    <p>The art and beauty of Japanese swords</p>
+    <button id="modeBtn">🌙 Modo Oscuro</button>
+  </header>
+
+  <!-- Menú hamburguesa -->
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="hamburger">☰</label>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#galeria">Galería</a>
+  </nav>
+
+  <!-- Sección principal -->
+  <section id="inicio">
+    <h2>Bienvenido a Mundo Katana</h2>
+    <p>
+      La <strong>chokutō</strong> es una espada japonesa recta tradicional,
+      antecesora de la katana curva y parte esencial de la historia samurái.
+    </p>
+
+    <p>
+      ⚔ <strong>Ideales para:</strong><br>
+      • Coleccionistas<br>
+      • Cosplays tradicionales<br>
+      • Decoración de espacios
+    </p>
+
+    <button id="infoBtn">Haz clic para saber más</button>
+  </section>
+
+  <!-- Sección de Cards -->
+  <section id="galeria">
+    <h2>Galería</h2>
+    <p class="hint-text">👉 Presiona la tarjeta para ver más información</p>
+
+    <div class="card-container">
+
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="front">
+          <img src="./imagenes/Imagen de WhatsApp 2025-11-03 a las 19.38.43_218b45ff.jpg" alt="Katana 2">
+          <p class="press-text">👉 Presiona la imagen</p>
+        </div>
+        <div class="back">
+          <p>
+            Material: Madera y bambú<br>
+            Longitud: 100cm<br>
+            Precio: ₡37,000
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="front">
+          <img src="./imagenes/OIP.webp" alt="Katana 3">
+          <p class="press-text">👉 Presiona la imagen</p>
+        </div>
+        <div class="back">
+          <p>
+            Material: Madera y bambú<br>
+            Longitud: 100cm<br>
+            Precio: ₡33,000
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <div class="front">
+          <img src="./imagenes/kakakshi.webp" alt="Katana 4">
+          <p class="press-text">👉 Presiona la imagen</p>
+        </div>
+        <div class="back">
+          <p>
+            Material: Madera y bambú<br>
+            Longitud: 100cm<br>
+            Precio: ₡33,000
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card">
+        <div class="front">
+          <img src="imagenes/Imagen de WhatsApp 2025-11-21 a las 18.31.03_9c8237fd.jpg" alt="Katana 4">
+          <p class="press-text">👉 Presiona la imagen</p>
+        </div>
+        <div class="back">
+          <p>
+            Material: Madera y bambú<br>
+            Longitud: 100cm<br>
+            Precio: ₡33,000
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Extra info -->
+  <section id="extraInfo" style="display: none;">
+    <h2>Más información</h2>
+    <p>
+      La chokutō, con su diseño recto y elegante, refleja la simplicidad y
+      funcionalidad de las primeras espadas japonesas. Hoy en día, estas espadas
+      son apreciadas tanto por coleccionistas como por entusiastas de la cultura
+      japonesa.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Katana World</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
