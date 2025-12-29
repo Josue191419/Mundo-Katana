@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- Declaración del tipo de documento HTML5 -->
+<html lang="es">
+<!-- Inicio del documento HTML con idioma español -->
+
+<head>
+  <!-- Metadatos y enlaces del documento -->
+  <meta charset="UTF-8">
+  <!-- Codificación de caracteres UTF-8 -->
+  <title>Admin - Katana World</title>
+  <!-- Título de la página de administración -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Enlace al archivo de estilos CSS -->
+</head>
+
+<body>
+  <!-- Inicio del cuerpo de la página -->
+
+  <!-- Sección de login para acceso de administrador -->
+  <div id="login">
+    <h2>Acceso administrador</h2>
+    <input type="password" id="password" placeholder="Contraseña">
+    <button onclick="login()">Entrar</button>
+  </div>
+
+  <!-- Contenido de administración, oculto por defecto hasta login -->
+  <div id="adminContent" style="display:none;">
+
+    <header>
+      <!-- Cabecera con título y enlace de vuelta -->
+      <h1>Katana World</h1>
+      <p>The art and beauty of Japanese swords</p>
+      <a href="index.html" class="back-btn">⬅ Volver al index</a>
+    </header>
+
+    <!-- Panel de administración con formulario para crear tarjetas -->
+    <section class="admin-panel">
+      <h2>Crear nueva card</h2>
+
+      <input id="title" placeholder="Título">
+      <input id="image" placeholder="URL de imagen">
+      <input id="material" placeholder="Material">
+      <input id="length" placeholder="Longitud">
+      <input id="price" placeholder="Precio">
+      <textarea id="description" placeholder="Descripción"></textarea>
+
+      <button onclick="addCard()">➕ Agregar</button>
+    </section>
+
+    <!-- Sección de galería para visualizar tarjetas en modo admin -->
+    <section id="galeria">
+      <h2>Galería (Admin)</h2>
+      <div class="card-container" id="cards"></div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+  <!-- Enlace al archivo de JavaScript -->
+
+</body>
+</html>
+<!-- Fin del documento HTML -->

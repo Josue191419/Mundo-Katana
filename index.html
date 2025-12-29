@@ -1,30 +1,43 @@
 <!DOCTYPE html>
+<!-- Declaración del tipo de documento HTML5 -->
 <html lang="es">
+<!-- Inicio del documento HTML con idioma español -->
+
 <head>
+  <!-- Metadatos y enlaces del documento -->
   <meta charset="UTF-8">
+  <!-- Codificación de caracteres UTF-8 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Configuración de viewport para dispositivos móviles -->
   <title>Mundo Katana</title>
+  <!-- Título de la página -->
   <link rel="stylesheet" href="style.css">
+  <!-- Enlace al archivo de estilos CSS -->
 </head>
 
 <body>
+  <!-- Inicio del cuerpo de la página -->
 
   <header>
+    <!-- Cabecera de la página con título y botón de modo oscuro -->
     <h1>Katana World</h1>
+      
     <p>The art and beauty of Japanese swords</p>
     <button id="modeBtn">🌙 Modo Oscuro</button>
   </header>
 
-  <!-- Menú hamburguesa -->
+  <!-- Menú hamburguesa para navegación móvil -->
   <input type="checkbox" id="menu-toggle">
   <label for="menu-toggle" class="hamburger">☰</label>
 
   <nav>
+    <!-- Navegación principal con enlaces a secciones -->
     <a href="#inicio">Inicio</a>
     <a href="#galeria">Galería</a>
+    <button onclick="location.href='admin.html'">Admin</button>
   </nav>
 
-  <!-- Sección principal -->
+  <!-- Sección principal de bienvenida -->
   <section id="inicio">
     <h2>Bienvenido a Mundo Katana</h2>
     <p>
@@ -42,16 +55,18 @@
     <button id="infoBtn">Haz clic para saber más</button>
   </section>
 
-  <!-- Sección de Cards -->
+  <!-- Sección de galería con tarjetas de productos -->
   <section id="galeria">
     <h2>Galería</h2>
     <p class="hint-text">👉 Presiona la tarjeta para ver más información</p>
 
     <div class="card-container">
-
+      <!-- Primera tarjeta (parece faltar en el código original, pero continuando) -->
+<div class="card-container" id="cards"></div>
 
       <!-- Card 2 -->
       <div class="card">
+        <!-- Tarjeta con imagen frontal y descripción trasera -->
         <div class="front">
           <img src="./imagenes/Imagen de WhatsApp 2025-11-03 a las 19.38.43_218b45ff.jpg" alt="Katana 2">
           <p class="press-text">👉 Presiona la imagen</p>
@@ -64,7 +79,7 @@
           </p>
         </div>
       </div>
-
+       <div class="card-container" id="cards"></div>
       <!-- Card 3 -->
       <div class="card">
         <div class="front">
@@ -113,7 +128,7 @@
     </div>
   </section>
 
-  <!-- Extra info -->
+  <!-- Sección de información adicional, oculta por defecto -->
   <section id="extraInfo" style="display: none;">
     <h2>Más información</h2>
     <p>
@@ -125,10 +140,13 @@
   </section>
 
   <footer>
+    <!-- Pie de página con copyright -->
     <p>&copy; 2025 Katana World</p>
   </footer>
 
   <script src="script.js"></script>
 
+
 </body>
 </html>
+<!-- Fin del documento HTML -->

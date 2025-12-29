@@ -1,3 +1,4 @@
+/* Estilos generales del cuerpo de la página */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -5,6 +6,7 @@ body {
   color: #333;
 }
 
+/* Estilos para la cabecera */
 header {
   background-color: #b22222;
   color: #f9f9f9;
@@ -12,12 +14,14 @@ header {
   padding: 20px;
 }
 
+/* Estilos para la navegación */
 nav {
   background-color:#f9f9f9;
   text-align: center;
   padding: 10px;
 }
 
+/* Estilos para los enlaces de navegación */
 nav a {
   color: rgb(146, 9, 9);
   text-decoration: none;
@@ -25,12 +29,13 @@ nav a {
   font-weight: bold;
 }
 
-
+/* Estilos para las secciones principales */
 section {
   padding: 20px;
   text-align: center;
 }
 
+/* Estilos para los botones */
 button {
   background-color: #b22222;
   color: white;
@@ -40,6 +45,7 @@ button {
   cursor: pointer;
 }
 
+/* Estilos para el pie de página */
 footer {
   background-color: #333;
   color: white;
@@ -47,11 +53,13 @@ footer {
   padding: 15px;
 }
 
+/* Estilos para el modo oscuro */
 .dark-mode {
   background-color: #1c1c1c;
   color: #eee;
 }
 
+/* Contenedor de tarjetas con diseño flexible */
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -59,7 +67,7 @@ footer {
   gap: 30px;
 }
 
-/* CONTENEDOR 3D */
+/* Contenedor 3D para las tarjetas */
 .card {
   width: 250px;
   height: 320px;
@@ -68,7 +76,7 @@ footer {
   position: relative;
 }
 
-/* INTERIOR DE LA CARD */
+/* Interior de la tarjeta (frente y reverso) */
 .card .front,
 .card .back {
   position: absolute;
@@ -84,12 +92,13 @@ footer {
   transition: transform 0.8s ease;
 }
 
-/* FRENTE */
+/* Estilos para el frente de la tarjeta */
 .card .front {
   background: linear-gradient(135deg, #b22222, #ff6347);
   transform: rotateY(0deg);
 }
 
+/* Estilos para la imagen en el frente */
 .card .front img {
   width: 100%;
   height: 200px;
@@ -97,7 +106,7 @@ footer {
   border-radius: 10px;
 }
 
-/* ATRÁS */
+/* Estilos para el reverso de la tarjeta */
 .card .back {
   background-color: #222;
   transform: rotateY(180deg);
@@ -105,7 +114,7 @@ footer {
   padding: 15px;
 }
 
-/* FLIP REAL */
+/* Efecto de giro para la tarjeta volteada */
 .card.flipped .front {
   transform: rotateY(-180deg);
 }
@@ -114,7 +123,7 @@ footer {
   transform: rotateY(0deg);
 }
 
-
+/* Estilos para el menú hamburguesa (oculto por defecto) */
 .hamburger {
   display: none;
 }
@@ -123,6 +132,7 @@ footer {
   display: none;
 }
 
+/* Media query para dispositivos móviles */
 @media (max-width: 600px) {
   .hamburger {
     display: block;
@@ -146,8 +156,8 @@ footer {
     display: flex;
   }
 }
-/* Animación de entrada elegante*/
 
+/* Animación de entrada elegante para las tarjetas */
 .card {
   animation: aparecer 0.8s ease forwards;
 }
@@ -162,6 +172,8 @@ footer {
     transform: scale(1);
   }
 }
+
+/* Transición para efectos hover en las tarjetas */
 .card {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -170,6 +182,8 @@ footer {
   transform: translateY(-12px);
   box-shadow: 0 25px 45px rgba(226, 2, 2, 0.35);
 }
+
+/* Ajustes de box-sizing para el frente y reverso */
 .card .front,
 .card .back {
   box-sizing: border-box;
@@ -180,8 +194,148 @@ footer {
   padding: 15px;
 }
 
+/* Estilos para el párrafo en el reverso de la tarjeta */
 .card .back p {
   margin: 0;
   line-height: 1.6;
   font-size: 16px;
 }
+
+/* admin */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px solid #ccc;
+  width: 200px;
+  padding: 10px;
+}
+
+.card img {
+  width: 100%;
+}
+/* Botón de administrador */
+.btn-admin {
+  display: inline-block;
+  padding: 10px 15px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+/* ========================= */
+/* ====== ADMIN PANEL ====== */
+/* ========================= */
+
+/* Login administrador */
+#login {
+  max-width: 350px;
+  margin: 80px auto;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(178, 34, 34, 0.3);
+  text-align: center;
+}
+
+#login h2 {
+  color: #b22222;
+  margin-bottom: 15px;
+}
+
+#login input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#login button {
+  width: 100%;
+}
+
+/* Contenido admin */
+#adminContent {
+  padding: 20px;
+}
+
+/* Panel de creación */
+.admin-panel {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.admin-panel h2 {
+  color: #b22222;
+  margin-bottom: 15px;
+}
+
+.admin-panel input,
+.admin-panel textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.admin-panel textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Botón volver al index */
+.back-btn {
+  display: inline-block;
+  margin-top: 10px;
+  color: #f9f9f9;
+  background-color: #8b0000;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ========================= */
+/* === BOTÓN ELIMINAR CARD == */
+/* ========================= */
+
+.delete-btn {
+  margin-top: 10px;
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background-color: #b22222;
+}
+
+/* Ajuste para cards en admin (sin romper animación) */
+#adminContent .card {
+  height: auto;
+  cursor: default;
+}
+
+#adminContent .card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
