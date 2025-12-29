@@ -16,14 +16,6 @@ Mundo Katana es una página web dedicada al arte y la belleza de las espadas jap
 - **CSS3**: Estilos, animaciones y diseño responsivo.
 - **JavaScript**: Lógica interactiva, manejo de eventos y localStorage.
 
-## Cómo Ejecutar
-1. Clona el repositorio:
-   ```
-   git clone https://github.com/Josue191419/Mundo-Katana.git
-   ```
-2. Abre `index.html` en tu navegador web.
-3. Para acceder al panel de administración, abre `admin.html` e ingresa la contraseña (por defecto: 1234).
-
 ## Estructura del Proyecto
 - `index.html`: Página principal con la galería pública.
 - `admin.html`: Página de administración para gestionar tarjetas.
@@ -37,6 +29,4 @@ Si deseas contribuir, por favor crea un fork del repositorio y envía un pull re
 ## Licencia
 Este proyecto es de código abierto. Consulta el archivo LICENSE para más detalles.
 
-## Autor
-Desarrollado por [Tu Nombre]. Contacto: [tu-email@example.com]</content>
-<parameter name="filePath">e:\codigos\Mundo Katana\README.md
+
