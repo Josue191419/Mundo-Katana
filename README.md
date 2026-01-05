@@ -32,9 +32,6 @@ Si deseas contribuir, por favor crea un fork del repositorio y envía un pull re
 ## Licencia
 Este proyecto es de código abierto. Consulta el archivo LICENSE para más detalles.
 
-## Autor
-Desarrollado por [Tu Nombre]. Contacto: [tu-email@example.com]</content>
-<parameter name="filePath">e:\codigos\Mundo Katana\README.md
-=======
+
 
 >>>>>>> 64ce12d740eae2524f6c385d7a91270e648c367a
