@@ -11,11 +11,6 @@ Mundo Katana es una página web dedicada al arte y la belleza de las espadas jap
 - **Diseño Responsivo**: Adaptable a dispositivos móviles con menú hamburguesa.
 - **Animaciones**: Efectos de entrada y hover para una experiencia visual atractiva.
 
-## Tecnologías Utilizadas
-- **HTML5**: Estructura de la página.
-- **CSS3**: Estilos, animaciones y diseño responsivo.
-- **JavaScript**: Lógica interactiva, manejo de eventos y localStorage.
-
 ## Cómo Ejecutar
 1. Clona el repositorio:
    ```
@@ -40,3 +35,6 @@ Este proyecto es de código abierto. Consulta el archivo LICENSE para más detal
 ## Autor
 Desarrollado por [Tu Nombre]. Contacto: [tu-email@example.com]</content>
 <parameter name="filePath">e:\codigos\Mundo Katana\README.md
+=======
+
+>>>>>>> 64ce12d740eae2524f6c385d7a91270e648c367a
