@@ -19,8 +19,6 @@ Mundo Katana es una página web dedicada al arte y la belleza de las espadas jap
 2. Abre `index.html` en tu navegador web.
 3. Para acceder al panel de administración, abre `admin.html` e ingresa la contraseña (por defecto: 1234).
 
-=======
->>>>>>> 64ce12d740eae2524f6c385d7a91270e648c367a
 ## Estructura del Proyecto
 - `index.html`: Página principal con la galería pública.
 - `admin.html`: Página de administración para gestionar tarjetas.
@@ -34,10 +32,5 @@ Si deseas contribuir, por favor crea un fork del repositorio y envía un pull re
 ## Licencia
 Este proyecto es de código abierto. Consulta el archivo LICENSE para más detalles.
 
-<<<<<<< HEAD
 ## Autor
-Desarrollado por [Tu Nombre]. Contacto: [tu-email@example.com]</content>
-<parameter name="filePath">e:\codigos\Mundo Katana\README.md
-=======
-
->>>>>>> 64ce12d740eae2524f6c385d7a91270e648c367a
+Desarrollado por [Tu Nombre]. Contacto: [tu-email@example.com]
