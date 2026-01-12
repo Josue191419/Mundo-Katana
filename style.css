@@ -1,9 +1,14 @@
 /* Estilos generales del cuerpo de la página */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   margin: 0;
   background-color: #f9f9f9;
   color: #333;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Estilos para la cabecera */
@@ -17,34 +22,109 @@ header {
   background-position: center;
   background-repeat: no-repeat;
 
-  color: #d80707;
+  color: #fff;
   text-align: center;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+header h1, header p, header button {
+  position: relative;
+  z-index: 2;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  margin-bottom: 2rem;
+}
+
+header button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }
 
 /* Estilos para la navegación */
 nav {
-  background-color:#f9f9f9;
+  background-color: rgba(249, 249, 249, 0.95);
   text-align: center;
-  padding: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 /* Estilos para los enlaces de navegación */
 nav a {
-  color: rgb(146, 9, 9);
+  color: #b22222;
   text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
+  margin: 0 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #8b0000;
+}
+
+nav button {
+  background: #b22222;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+nav button:hover {
+  background: #8b0000;
 }
 
 /* Estilos para las secciones principales */
 section {
-  padding: 20px;
+  padding: 40px 20px;
   text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #b22222;
+  margin-bottom: 1rem;
+}
+
+section p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
 }
 
 /* Estilos para los botones */
@@ -52,9 +132,18 @@ button {
   background-color: #b22222;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 12px 20px;
   border-radius: 8px;
   cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #8b0000;
+  transform: translateY(-2px);
 }
 
 /* Estilos para el pie de página */
@@ -62,7 +151,8 @@ footer {
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
+  font-size: 0.9rem;
 }
 
 /* Estilos para el modo oscuro */
@@ -108,6 +198,7 @@ footer {
 .card .front {
   background: linear-gradient(135deg, #b22222, #ff6347);
   transform: rotateY(0deg);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 /* Estilos para la imagen en el frente */
@@ -124,6 +215,7 @@ footer {
   transform: rotateY(180deg);
   text-align: center;
   padding: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 /* Efecto de giro para la tarjeta volteada */
@@ -146,6 +238,17 @@ footer {
 
 /* Media query para dispositivos móviles */
 @media (max-width: 600px) {
+
+  /* HEADER con imagen completa */
+  header {
+    height: 60vh;
+    background-size: cover;     /* imagen completa */
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  /* Botón hamburguesa */
   .hamburger {
     display: block;
     position: absolute;
@@ -154,27 +257,38 @@ footer {
     cursor: pointer;
     font-size: 28px;
     z-index: 10;
+    color: rgb(243, 10, 10);
   }
 
+  /* Menú */
   nav {
     display: none;
     flex-direction: column;
-    background-color: #f9f9f9;
+    background-color: rgba(0, 0, 0, 0.9);
     position: absolute;
     top: 60px;
     right: 0;
     width: 100%;
     text-align: center;
+    z-index: 9;
   }
 
   nav a {
     margin: 15px 0;
+    color: white;
+    text-decoration: none;
   }
 
+  /* Mostrar menú */
   #menu-toggle:checked + .hamburger + nav {
     display: flex;
   }
 }
+
+  #menu-toggle:checked + .hamburger + nav {
+    display: flex;
+  }
+
 
 /* Animación de entrada elegante para las tarjetas */
 .card {
