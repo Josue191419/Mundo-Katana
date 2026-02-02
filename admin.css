@@ -1,0 +1,162 @@
+/*Estilos exclusivos para la página de administración */
+
+/* Body específico para admin */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #ffffff;
+  color: #333;
+}
+
+/* Contenedor de tarjetas en admin */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Estilo básico de tarjeta para admin */
+.card {
+  border: 1px solid #ccc;
+  width: 200px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Botón de administrador */
+.btn-admin {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* ========================= */
+/* ====== ADMIN PANEL ====== */
+/* ========================= */
+
+/* Login administrador */
+#login {
+  max-width: 350px;
+  margin: 80px auto;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(178, 34, 34, 0.3);
+  text-align: center;
+}
+
+#login h2 {
+  color: #b22222;
+  margin-bottom: 15px;
+}
+
+#login input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#login button {
+  width: 100%;
+}
+
+/* Contenido admin */
+#adminContent {
+  padding: 20px;
+}
+
+/* Panel de creación */
+.admin-panel {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.admin-panel h2 {
+  color: #b22222;
+  margin-bottom: 15px;
+}
+
+.admin-panel input,
+.admin-panel textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.admin-panel textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Botón volver al index */
+.back-btn {
+  display: inline-block;
+  margin-top: 10px;
+  color: #f9f9f9;
+  background-color: #8b0000;
+  padding: 5px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* BOTÓN ELIMINAR CARD */
+.delete-btn {
+  margin-top: 10px;
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background-color: #b22222;
+}
+
+/* Ajuste para cards en admin (sin romper animación) */
+#adminContent .card {
+  height: auto;
+  cursor: default;
+}
+
+#adminContent .card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+@media (max-width: 600px) {
+  .admin-panel { margin: 20px 10px; }
+  #login { margin: 40px 10px; }
+  .card { width: 45%; }
+}
+

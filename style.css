@@ -148,11 +148,106 @@ button:hover {
 
 /* Estilos para el pie de página */
 footer {
+  background-color: #1a1a1a;
+  color: #eee;
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+  border-top: 3px solid #b22222;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  gap: 40px;
+}
+
+.footer-section h3 {
+  color: #b22222;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.footer-section p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section a {
+  color: #b22222;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #ff6347;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   background-color: #333;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #b22222;
   color: white;
+}
+
+.footer-bottom {
   text-align: center;
-  padding: 20px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
   font-size: 0.9rem;
+  color: #aaa;
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+}
+
+.footer-bottom a {
+  color: #b22222;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  footer {
+    padding: 30px 15px 15px;
+  }
 }
 
 /* Estilos para el modo oscuro */
