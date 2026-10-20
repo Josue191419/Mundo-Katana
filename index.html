@@ -1,183 +1,285 @@
 <!DOCTYPE html>
-<!-- Declaración del tipo de documento HTML5 -->
 <html lang="es">
-<!-- Inicio del documento HTML con idioma español -->
 
 <head>
-  <!-- Metadatos y enlaces del documento -->
   <meta charset="UTF-8">
-  <!-- Codificación de caracteres UTF-8 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Configuración de viewport para dispositivos móviles -->
-  <title>Mundo Katana</title>
-  <!-- Título de la página -->
+  <title>Katana World | El Arte de la Espada Japonesa</title>
+
+  <!-- Tipografías de Autor -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <!-- Enlace al archivo de estilos CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-  <!-- Inicio del cuerpo de la página -->
 
-  <header>
-    <!-- Cabecera de la página con título y botón de modo oscuro -->
-    <h1>Katana World</h1>
-      
-    <p>The art and beauty of Japanese swords</p>
-    <button id="modeBtn">🌙 Modo Oscuro</button>
-  </header>
+  <!-- Barra de Notificaciones Superior -->
+  <div class="announcement-bar">
+    <span class="hanko-seal">印</span>
+    <span>FORJADO TRADICIONAL  &bull; COLECCIÓN 2026</span>
+  </div>
 
-  <!-- Menú hamburguesa para navegación móvil -->
-  <input type="checkbox" id="menu-toggle">
-  <label for="menu-toggle" class="hamburger">☰</label>
+  <!-- Navegación Principal -->
+  <nav class="main-nav">
+    <div class="nav-wrapper">
+      <a href="#inicio" class="brand-logo">
+        <span class="logo-kanji">刀</span>
+        <span class="logo-text">Katana World</span>
+      </a>
 
-  <nav>
-    <!-- Navegación principal con enlaces a secciones -->
-    <a href="#inicio">Inicio</a>
-    <a href="#galeria">Galería</a>
-    <button onclick="location.href='admin.html'">Admin</button>
+      <div class="nav-links" id="navMenu">
+        <a href="#inicio">Inicio</a>
+        <a href="#destacado">Santuario</a>
+        <a href="#galeria">Galería</a>
+        <button class="nav-admin-btn" onclick="location.href='admin.html'">Admin</button>
+      </div>
+
+      <div class="nav-actions">
+        <button id="modeBtn" class="theme-toggle-btn" aria-label="Cambiar Tema">
+          <span class="theme-icon">🌙</span>
+          <span class="theme-text">Oscuro</span>
+        </button>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir Menú">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
   </nav>
 
-  <!-- Sección principal de bienvenida -->
-  <section id="inicio">
-    <h2>Bienvenido a Mundo Katana</h2>
-    <p>
+  <!-- Header / Hero Cinemático -->
+  <header id="inicio" class="hero-section">
+    <div class="hero-backdrop"></div>
+    <div class="hero-content">
+      <div class="hero-badge-container">
+        <span class="hero-kicker">Arte &amp; Misticismo</span>
+      </div>
+      <h1 class="hero-title">KATANA WORLD</h1>
+      <p class="hero-subtitle">The art and beauty of Japanese swords</p>
+
+      <div class="hero-cta-group">
+        <a href="#galeria" class="btn-explore">Explorar Galería</a>
+        <button id="infoBtn" class="btn-ghost">Haz clic para saber más</button>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span class="scroll-arrow">↓</span>
+    </div>
+  </header>
+
+  <!-- Sección de Información Expandible -->
+  <section id="extraInfo" class="extra-info-panel" style="display: none;">
+    <div class="info-card-inner">
+      <span class="info-tag">Historia y Origen</span>
+      <h2>La Tradición de la Chokutō</h2>
+      <p>
+        La chokutō, con su diseño recto y elegante, refleja la simplicidad y
+        funcionalidad de las primeras espadas japonesas. Hoy en día, estas espadas
+        son apreciadas tanto por coleccionistas como por entusiastas de la cultura
+        japonesa.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sección de Filosofía y Uso -->
+  <section class="philosophy-section">
+    <div class="section-header">
+      <span class="section-subtitle">Chokutō &amp; Katana</span>
+      <h2>Tradición y Colección</h2>
+      <div class="header-line"></div>
+    </div>
+
+    <p class="section-intro">
       La <strong>chokutō</strong> es una espada japonesa recta tradicional,
       antecesora de la katana curva y parte esencial de la historia samurái.
     </p>
 
-    <p>
-      ⚔ <strong>Ideales para:</strong><br>
-      • Coleccionistas<br>
-      • Cosplays tradicionales<br>
-      • Decoración de espacios
-    </p>
-
-    <button id="infoBtn">Haz clic para saber más</button>
+    <div class="use-cases-grid">
+      <div class="use-card">
+        <div class="use-icon">🏮</div>
+        <h3>Coleccionistas</h3>
+        <p>Piezas únicas elaboradas para exposición y preservación cultural.</p>
+      </div>
+      <div class="use-card">
+        <div class="use-icon">🎭</div>
+        <h3>Cosplays Tradicionales</h3>
+        <p>Réplicas detalladas y livianas con acabados auténticos.</p>
+      </div>
+      <div class="use-card">
+        <div class="use-icon">🏯</div>
+        <h3>Decoración de Espacios</h3>
+        <p>Elegancia marcial para salones, dojos y ambientes ejecutivos.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- Sección de galería con tarjetas de productos -->
-  <section id="galeria">
-    <h2>Galería</h2>
-    <p class="hint-text">👉 Presiona la tarjeta para ver más información</p>
+  <!-- BANNERS/IMAGEN DESTACADA EN EL CENTRO -->
+  <section id="destacado" class="center-banner-section">
+    <div class="center-banner-container">
+      <div class="center-banner-overlay"></div>
+      <div class="center-banner-content">
+        <span class="center-tag">日本刀の芸術 &bull; EL SANCTUARIO DE LA HOJA</span>
+        <h2>EL ARTE DEL SAMURÁI EN SU MÁXIMA EXPRESIÓN</h2>
+        <p>Forja ancestral, equilibrio perfecto y la mística de la cultura japonesa en un espacio dedicado a los amantes del acero tradicional.</p>
+        <a href="#galeria" class="btn-banner-gold">Ver Piezas Exclusivas</a>
+      </div>
+    </div>
+  </section>
 
-    <div class="card-container">
-      <!-- Primera tarjeta (parece faltar en el código original, pero continuando) -->
-<div class="card-container" id="cards"></div>
+  <!-- Sección Galería de Espadas -->
+  <section id="galeria" class="gallery-section">
+    <div class="section-header">
+      <span class="section-subtitle">Exhibición</span>
+      <h2>Galería de Piezas</h2>
+      <div class="header-line"></div>
+    </div>
+    <p class="hint-text">👉 Presiona cualquier tarjeta para rotar y ver la ficha técnica</p>
 
-      <!-- Card 2 -->
-      <div class="card">
-        <!-- Tarjeta con imagen frontal y descripción trasera -->
-        <div class="front">
-          <img src="./imagenes/Imagen de WhatsApp 2025-11-03 a las 19.38.43_218b45ff.jpg" alt="Katana 2">
-          <p class="press-text">👉 Presiona la imagen</p>
-        </div>
-        <div class="back">
-          <p>
-            Material: Madera y bambú<br>
-            Longitud: 100cm<br>
-            Precio: ₡37,000
-          </p>
+    <div class="gallery-grid" id="cardsContainer">
+
+      <!-- Card 1 -->
+      <div class="card-item">
+        <div class="card-inner">
+          <div class="card-front">
+            <span class="badge-edition">Edición Especial</span>
+            <div class="image-wrapper">
+              <img src="./imagenes/Imagen de WhatsApp 2025-11-03 a las 19.38.43_218b45ff.jpg" alt="Katana 1">
+            </div>
+            <div class="card-front-footer">
+              <span class="press-hint">👉 Presiona la imagen</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <span class="back-kanji">侍</span>
+            <h3>Ficha Técnica</h3>
+            <ul class="specs-list">
+              <li><strong>Material:</strong> Madera y bambú</li>
+              <li><strong>Longitud:</strong> 100cm</li>
+            </ul>
+            <div class="price-badge">₡37,000</div>
+          </div>
         </div>
       </div>
-       <div class="card-container" id="cards"></div>
-      <!-- Card 3 -->
-      <div class="card">
-        <div class="front">
-          <img src="./imagenes/OIP.webp" alt="Katana 3">
-          <p class="press-text">👉 Presiona la imagen</p>
+
+      <!-- Card 2 -->
+      <div class="card-item">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-wrapper">
+              <img src="./imagenes/OIP.webp" alt="Katana 2">
+            </div>
+            <div class="card-front-footer">
+              <span class="press-hint">👉 Presiona la imagen</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <span class="back-kanji">刀</span>
+            <h3>Ficha Técnica</h3>
+            <ul class="specs-list">
+              <li><strong>Material:</strong> Madera y bambú</li>
+              <li><strong>Longitud:</strong> 100cm</li>
+            </ul>
+            <div class="price-badge">₡33,000</div>
+          </div>
         </div>
-        <div class="back">
-          <p>
-            Material: Madera y bambú<br>
-            Longitud: 100cm<br>
-            Precio: ₡33,000
-          </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card-item">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-wrapper">
+              <img src="./imagenes/kakakshi.webp" alt="Katana 3">
+            </div>
+            <div class="card-front-footer">
+              <span class="press-hint">👉 Presiona la imagen</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <span class="back-kanji">武</span>
+            <h3>Ficha Técnica</h3>
+            <ul class="specs-list">
+              <li><strong>Material:</strong> Madera y bambú</li>
+              <li><strong>Longitud:</strong> 100cm</li>
+            </ul>
+            <div class="price-badge">₡33,000</div>
+          </div>
         </div>
       </div>
 
       <!-- Card 4 -->
-      <div class="card">
-        <div class="front">
-          <img src="./imagenes/kakakshi.webp" alt="Katana 4">
-          <p class="press-text">👉 Presiona la imagen</p>
-        </div>
-        <div class="back">
-          <p>
-            Material: Madera y bambú<br>
-            Longitud: 100cm<br>
-            Precio: ₡33,000
-          </p>
+      <div class="card-item">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-wrapper">
+              <img src="imagenes/Imagen de WhatsApp 2025-11-21 a las 18.31.03_9c8237fd.jpg" alt="Katana 4">
+            </div>
+            <div class="card-front-footer">
+              <span class="press-hint">👉 Presiona la imagen</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <span class="back-kanji">道</span>
+            <h3>Ficha Técnica</h3>
+            <ul class="specs-list">
+              <li><strong>Material:</strong> Madera y bambú</li>
+              <li><strong>Longitud:</strong> 100cm</li>
+            </ul>
+            <div class="price-badge">₡33,000</div>
+          </div>
         </div>
       </div>
 
-      <!-- Card 5 -->
-      <div class="card">
-        <div class="front">
-          <img src="imagenes/Imagen de WhatsApp 2025-11-21 a las 18.31.03_9c8237fd.jpg" alt="Katana 4">
-          <p class="press-text">👉 Presiona la imagen</p>
-        </div>
-        <div class="back">
-          <p>
-            Material: Madera y bambú<br>
-            Longitud: 100cm<br>
-            Precio: ₡33,000
-          </p>
-        </div>
-      </div>
+      <!-- Contenedor dinámico de Admin -->
+      <div id="dynamicCards" class="dynamic-wrapper"></div>
 
     </div>
   </section>
 
-  <!-- Sección de información adicional, oculta por defecto -->
-  <section id="extraInfo" style="display: none;">
-    <h2>Más información</h2>
-    <p>
-      La chokutō, con su diseño recto y elegante, refleja la simplicidad y
-      funcionalidad de las primeras espadas japonesas. Hoy en día, estas espadas
-      son apreciadas tanto por coleccionistas como por entusiastas de la cultura
-      japonesa.
-    </p>
-  </section>
-
-  <footer>
-    <!-- Pie de página profesional -->
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Katana World</h3>
+  <!-- Pie de Página Tradicional -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-col brand-col">
+        <div class="footer-logo">
+          <span class="logo-kanji">刀</span>
+          <h3>Katana World</h3>
+        </div>
         <p>Distribuidor de espadas japonesas auténticas y de calidad superior para coleccionistas y entusiastas.</p>
       </div>
 
-      <div class="footer-section">
-        <h3>Enlaces Rápidos</h3>
+      <div class="footer-col">
+        <h4>Navegación</h4>
         <ul>
           <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#galeria">Galería</a></li>
-          <li><a href="admin.html">Panel Admin</a></li>
+          <li><a href="#destacado">Santuario</a></li>
+          <li><a href="#galeria">Galería de Espadas</a></li>
+          <li><a href="admin.html">Panel de Administración</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
 
-      <div class="footer-section">
-        <h3>Contacto</h3>
-        <p>📞 Teléfono: +506 70707034</p>
-        <p>📍 Costa Rica</p>
+      <div class="footer-col" id="contacto">
+        <h4>Contacto &amp; Ubicación</h4>
+        <p class="contact-info">📞 Teléfono: +506 70707034</p>
+        <p class="contact-info">📍 Costa Rica</p>
       </div>
-
-    
+    </div>
 
     <div class="footer-bottom">
-      <p>Katana World.</p>
-      <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+      <p>&copy; 2026 Katana World. Todos los derechos reservados.</p>
+      <div class="footer-legal">
+        <a href="#">Política de Privacidad</a>
+        <span>&bull;</span>
+        <a href="#">Términos de Servicio</a>
+      </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
 
-
 </body>
 </html>
-
-

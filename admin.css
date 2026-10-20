@@ -1,162 +1,370 @@
-/*Estilos exclusivos para la página de administración */
+/* ========================================== */
+/* === VARIABLES Y TEMA NEUJAPONÉS ========== */
+/* ========================================== */
+:root {
+  --primary-red: #8b0000;
+  --primary-crimson: #b22222;
+  --gold-accent: #d4af37;
+  --bg-page: #f6f5f2;
+  --bg-card: #ffffff;
+  --text-main: #18181b;
+  --text-muted: #52525b;
+  --border-light: #e4e4e7;
+  --radius-lg: 18px;
+  --shadow-subtle: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+  --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-/* Body específico para admin */
+.dark-mode {
+  --bg-page: #0f0f11;
+  --bg-card: #18181b;
+  --text-main: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --border-light: #27272a;
+}
+
+/* ========================================== */
+/* === ESTILOS GENERALES Y ADMIN ============ */
+/* ========================================== */
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background: #ffffff;
-  color: #333;
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Contenedor de tarjetas en admin */
-.card-container {
+/* Barra Superior Promocional */
+.announcement-bar {
+  background-color: #111113;
+  color: var(--gold-accent);
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.cards {
+.hanko-seal {
+  background: var(--primary-red);
+  color: white;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.admin-nav-bar {
+  max-width: 1150px;
+  margin: 20px auto;
+  padding: 0 20px;
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Estilo básico de tarjeta para admin */
-.card {
-  border: 1px solid #ccc;
-  width: 200px;
-  padding: 10px;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-}
-
-.card img {
-  width: 100%;
-  display: block;
-  border-radius: 4px;
-}
-
-/* Botón de administrador */
-.btn-admin {
-  display: inline-block;
-  padding: 10px 15px;
-  background: #000;
+/* Botón volver al index */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0;
   color: #fff;
+  background-color: var(--primary-red);
+  padding: 8px 16px;
+  border-radius: 8px;
   text-decoration: none;
-  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
 }
 
-/* ========================= */
-/* ====== ADMIN PANEL ====== */
-/* ========================= */
+.back-btn:hover {
+  background-color: var(--primary-crimson);
+  transform: translateY(-2px);
+}
+
+.theme-toggle-btn {
+  background: rgba(139, 0, 0, 0.08);
+  border: 1px solid rgba(139, 0, 0, 0.2);
+  color: var(--text-main);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--primary-red);
+  color: white;
+  border-color: var(--primary-red);
+}
 
 /* Login administrador */
 #login {
-  max-width: 350px;
-  margin: 80px auto;
-  background-color: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(178, 34, 34, 0.3);
+  max-width: 380px;
+  margin: 60px auto;
+  background-color: var(--bg-card);
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--border-light);
   text-align: center;
 }
 
+.login-kanji {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 3rem;
+  color: var(--primary-red);
+  display: block;
+  margin-bottom: 5px;
+}
+
 #login h2 {
-  color: #b22222;
-  margin-bottom: 15px;
+  font-family: 'Cinzel', serif;
+  color: var(--primary-red);
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
 }
 
 #login input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 12px;
+  padding: 12px;
+  margin-bottom: 15px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-light);
+  background: var(--bg-page);
+  color: var(--text-main);
+  box-sizing: border-box;
 }
 
 #login button {
   width: 100%;
+  background: var(--primary-red);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#login button:hover {
+  background: var(--primary-crimson);
 }
 
 /* Contenido admin */
 #adminContent {
   padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.admin-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.admin-subtitle {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-accent);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.admin-header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  color: var(--primary-red);
+  margin: 5px 0 10px 0;
+}
+
+.admin-header p {
+  color: var(--text-muted);
+  margin: 0 0 15px 0;
+}
+
+.header-line {
+  width: 50px;
+  height: 3px;
+  background: var(--gold-accent);
+  margin: 0 auto;
+  border-radius: 2px;
 }
 
 /* Panel de creación */
 .admin-panel {
-  max-width: 600px;
-  margin: 40px auto;
-  background-color: #f9f9f9;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  max-width: 650px;
+  margin: 0 auto 50px auto;
+  background-color: var(--bg-card);
+  padding: 35px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--border-light);
 }
 
 .admin-panel h2 {
-  color: #b22222;
-  margin-bottom: 15px;
+  font-family: 'Cinzel', serif;
+  color: var(--primary-red);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.panel-hint {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
 }
 
 .admin-panel input,
 .admin-panel textarea {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 12px;
+  margin-bottom: 15px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-light);
+  background: var(--bg-page);
+  color: var(--text-main);
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .admin-panel textarea {
   resize: vertical;
-  min-height: 80px;
+  min-height: 90px;
 }
 
-/* Botón volver al index */
-.back-btn {
-  display: inline-block;
-  margin-top: 10px;
-  color: #f9f9f9;
-  background-color: #8b0000;
-  padding: 5px 10px;
+.admin-panel button {
+  width: 100%;
+  background: var(--primary-red);
+  color: white;
+  border: none;
+  padding: 12px;
   border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.admin-panel button:hover {
+  background: var(--primary-crimson);
+}
+
+/* Sección de galería admin */
+.admin-gallery-section {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.admin-gallery-section h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--primary-red);
+}
+
+.hint-text {
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+/* Contenedor de tarjetas en admin */
+.card-container, .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Estilo básico de tarjeta para admin */
+.card {
+  border: 1px solid var(--border-light);
+  width: 260px;
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-subtle);
+  box-sizing: border-box;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  cursor: default;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: none;
+  box-shadow: var(--shadow-subtle);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--text-main);
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+.card p {
   font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 6px 0;
+  line-height: 1.4;
 }
 
 /* BOTÓN ELIMINAR CARD */
 .delete-btn {
-  margin-top: 10px;
-  background-color: #8b0000;
+  margin-top: 14px;
+  background-color: var(--primary-red);
   color: white;
   border: none;
-  padding: 8px 10px;
+  padding: 9px 12px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  width: 100%;
+  transition: var(--transition);
 }
 
 .delete-btn:hover {
-  background-color: #b22222;
+  background-color: var(--primary-crimson);
 }
 
-/* Ajuste para cards en admin (sin romper animación) */
-#adminContent .card {
-  height: auto;
-  cursor: default;
-}
-
-#adminContent .card:hover {
-  transform: none;
-  box-shadow: none;
-}
-
+/* Responsive */
 @media (max-width: 600px) {
-  .admin-panel { margin: 20px 10px; }
+  .admin-panel { margin: 20px 10px; padding: 20px; }
   #login { margin: 40px 10px; }
-  .card { width: 45%; }
+  .card { width: 100%; max-width: 280px; }
 }
-

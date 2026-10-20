@@ -1,93 +1,81 @@
-// Espera a que el DOM esté completamente cargado antes de ejecutar el código
+// Espera a que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Obtiene referencias a los elementos del DOM
+  // Referencias a los elementos del DOM
   const infoBtn = document.getElementById("infoBtn");
   const extraInfo = document.getElementById("extraInfo");
   const modeBtn = document.getElementById("modeBtn");
 
-  // Agrega un evento de clic al botón de información para mostrar/ocultar la sección extra
-  infoBtn.addEventListener("click", () => {
-    extraInfo.style.display =
-      extraInfo.style.display === "none" ? "block" : "none";
-  });
-
-  // Agrega un evento de clic al botón de modo para alternar entre modo claro y oscuro
-  modeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-  });
-
-  // Agrega un evento de clic a cada tarjeta para voltearla (efecto 3D)
-  document.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("click", () => {
-      card.classList.toggle("flipped");
+  // Toggle animado para la sección de información extra
+  if (infoBtn && extraInfo) {
+    infoBtn.addEventListener("click", () => {
+      const isHidden = extraInfo.style.display === "none" || extraInfo.style.display === "";
+      extraInfo.style.display = isHidden ? "block" : "none";
+      infoBtn.textContent = isHidden ? "Ocultar información" : "Haz clic para saber más";
     });
+  }
+
+  // Restaurar preferencia guardada de Modo Oscuro con localStorage
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+    if (modeBtn) modeBtn.textContent = "☀️ Modo Claro";
+  }
+
+  // Alternar Modo Oscuro de forma dinámica
+  if (modeBtn) {
+    modeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const isDark = document.body.classList.contains("dark-mode");
+      
+      localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
+      modeBtn.textContent = isDark ? "☀️ Modo Claro" : "🌙 Modo Oscuro";
+    });
+  }
+
+  // Renderizar tarjetas dinámicas creadas desde el panel admin
+  renderPublicCards();
+
+  // Delegación de eventos global para el giro 3D fluido de las tarjetas (estáticas y dinámicas)
+  document.addEventListener("click", (event) => {
+    const card = event.target.closest(".card");
+    if (card) {
+      card.classList.toggle("flipped");
+    }
   });
 
 });
 
-// (Admin functions moved to admin.js)
+// Función para obtener tarjetas del almacenamiento local
+function getCards() {
+  return JSON.parse(localStorage.getItem("cards")) || [];
+}
 
-// Función para renderizar las tarjetas públicas en index.html
+// Renderizado optimizado de tarjetas dinámicas sin duplicaciones
 function renderPublicCards() {
-  const container = document.getElementById("cards");
+  const container = document.getElementById("dynamicCards");
   if (!container) return;
 
   container.innerHTML = "";
+  const dynamicCards = getCards();
 
-  // Obtiene las tarjetas y las renderiza con estructura de frente y reverso
-  getCards().forEach(card => {
-    container.innerHTML += `
-      <div class="card">
-        <div class="front">
-          <img src="${card.image}">
-          <p class="press-text">👉 Presiona la imagen</p>
-        </div>
-        <div class="back">
-          <p>
-            Material: ${card.material}<br>
-            Longitud: ${card.length}<br>
-            Precio: ${card.price}
-          </p>
-        </div>
-      </div>
-    `;
-  });
-}
-
-// Evento para renderizar tarjetas públicas al cargar el DOM
-document.addEventListener("DOMContentLoaded", renderPublicCards);
-
-// Evento adicional para manejar el flip de tarjetas en index.html
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("cards");
-  if (!container) return;
-
-  const cards = JSON.parse(localStorage.getItem("cards")) || [];
-
-  cards.forEach(card => {
+  dynamicCards.forEach(card => {
     const div = document.createElement("div");
     div.className = "card";
 
     div.innerHTML = `
       <div class="front">
-        <img src="${card.image}">
+        <img src="${card.image}" alt="Katana Dinámica">
         <p class="press-text">👉 Presiona la imagen</p>
       </div>
       <div class="back">
         <p>
-          Material: ${card.material}<br>
-          Longitud: ${card.length}<br>
-          Precio: ${card.price}
+          <strong>Material:</strong> ${card.material}<br>
+          <strong>Longitud:</strong> ${card.length}<br>
+          <span class="price-tag">${card.price}</span>
         </p>
       </div>
     `;
 
-    // Agrega evento de clic para el efecto flip
-    div.addEventListener("click", () => {
-      div.classList.toggle("flipped");
-    });
-
     container.appendChild(div);
   });
-});
+}
